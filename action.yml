@@ -10,6 +10,10 @@ inputs:
   workflow_id: # ID or filename of the workflow
     description: "ID or filename of the workflow"
     required: true
+  event: # Event that triggers workflow
+    description: "Event that triggers workflow"
+    required: false
+
 outputs:
   commit_hash: # hash of the last successful workflow run
     description: "Last successful commit"

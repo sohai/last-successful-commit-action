@@ -5,6 +5,7 @@ try {
   const octokit = github.getOctokit(core.getInput("github_token"));
   const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
   const branch = core.getInput("branch");
+  const event = core.getInput("event");
   octokit.actions
     .listWorkflowRuns({
       owner,
@@ -12,7 +13,7 @@ try {
       workflow_id: core.getInput("workflow_id"),
       status: "success",
       ...(branch ? { branch } : {}),
-      event: "push",
+      ...(event ? { event } : {}),
     })
     .then((res) => {
       const lastSuccessCommitHash =
