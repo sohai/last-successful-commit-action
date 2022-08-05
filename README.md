@@ -13,8 +13,7 @@ why this would be useful.
 
 ### `branch`
 
-**Required** Branch to get last successful commit from.
-**Default**: `main`
+Branch to get last successful commit from.
 
 ### `github_token`
 
